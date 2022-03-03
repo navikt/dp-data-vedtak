@@ -1,7 +1,5 @@
 package no.nav.dagpenger.data.vedtak.tjenester
 
-import no.nav.dagpenger.data.vedtak.asMap
-import no.nav.dagpenger.data.vedtak.config
 import no.nav.dagpenger.data.vedtak.repository.InMemoryVedtakRepository
 import no.nav.helse.rapids_rivers.testsupport.TestRapid
 import org.intellij.lang.annotations.Language

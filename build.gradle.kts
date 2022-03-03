@@ -1,19 +1,30 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
+    kotlin("jvm") version "1.6.10"
+    application
 }
 
-allprojects {
-    repositories {
-        mavenCentral()
+repositories {
+    mavenCentral()
+    maven("https://jitpack.io")
+}
+
+application {
+    mainClass.set("no.nav.dagpenger.data.vedtak.AppKt")
+}
+
+dependencies {
+    implementation("com.natpryce:konfig:1.6.10.0")
+    implementation("com.github.navikt:rapids-and-rivers:2022.02.28-16.20.1a549dcffaae")
+
+    testImplementation(kotlin("test"))
+}
+
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(JavaVersion.VERSION_17.toString()))
     }
 }
 
-subprojects {
-    apply(plugin = "org.jlleitschuh.gradle.ktlint")
-
-    tasks.withType<KotlinCompile>().configureEach {
-        dependsOn("ktlintFormat")
-    }
+tasks.test {
+    useJUnitPlatform()
 }
