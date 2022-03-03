@@ -1,0 +1,6 @@
+kafka:
+  pool: nav-dev
+  consumer_group_id: dp-data-vedtak
+replicas:
+  min: 1
+  max: 9
