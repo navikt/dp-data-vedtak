@@ -1,0 +1,53 @@
+{
+  "namespace": "no.nav.dagpenger.data.vedtak",
+  "name": "Vedtak",
+  "type": "record",
+  "fields": [
+    {
+      "name": "vedtakId",
+      "type": "string"
+    },
+    {
+      "name": "sakId",
+      "type": "string"
+    },
+    {
+      "name": "personId",
+      "type": "string"
+    },
+    {
+      "name": "rettighet",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "utfall",
+      "type": "string"
+    },
+    {
+      "name": "opprettet",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "oppdatert",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "saknummer",
+      "type": "string"
+    }
+  ]
+}
