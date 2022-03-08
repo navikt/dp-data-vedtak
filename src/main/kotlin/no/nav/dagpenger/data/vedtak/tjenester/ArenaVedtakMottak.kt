@@ -24,6 +24,7 @@ internal class ArenaVedtakMottak(
                 "rettighet",
                 "type",
                 "utfall",
+                "saknummer"
             )
         }.register(this)
     }
@@ -36,6 +37,7 @@ internal class ArenaVedtakMottak(
                 type = packet["type"].asText(),
                 status = packet["status"].asText(),
                 utfall = packet["utfall"].asText(),
+                saknummer = packet["saknummer"].asText(),
             ).also {
                 logg.info { "leste inn vedtak: ${it.vedtakId}" }
             }

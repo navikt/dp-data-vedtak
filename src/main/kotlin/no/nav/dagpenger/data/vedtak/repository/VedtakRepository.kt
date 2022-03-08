@@ -10,5 +10,6 @@ data class Vedtak(
     val rettighet: String,
     val type: String,
     val status: String,
-    val utfall: String
+    val utfall: String,
+    val saknummer: String
 )

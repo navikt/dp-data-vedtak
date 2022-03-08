@@ -34,6 +34,7 @@ private const val testJSON = """{
   "status": "Iverksatt",
   "utfall": "Ja",
   "opprettet": "2019-09-27T04:04:26",
-  "oppdatert": "2019-09-27T04:04:26"
+  "oppdatert": "2019-09-27T04:04:26",
+  "saknummer": "2019580493"
 }
 """
