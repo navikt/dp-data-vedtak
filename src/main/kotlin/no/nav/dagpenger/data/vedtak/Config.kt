@@ -16,4 +16,5 @@ internal val config: Configuration by lazy {
     EnvironmentVariables overriding defaultProperties
 }
 
-internal fun Configuration.asMap(): Map<String, String> = list().reversed().fold(emptyMap()) { map, pair -> map + pair.second }
+internal fun Configuration.asMap(): Map<String, String> =
+    list().reversed().fold(emptyMap()) { map, pair -> map + pair.second }

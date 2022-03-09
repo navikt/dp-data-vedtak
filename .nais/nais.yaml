@@ -29,3 +29,9 @@ spec:
   env:
     - name: KAFKA_CONSUMER_GROUP_ID
       value: {{kafka.consumer_group_id}}
+    - name: KAFKA_RAPID_TOPIC
+      value: teamdagpenger.rapid.v1
+    - name: KAFKA_RESET_POLICY
+      value: earliest
+    - name: DATA_PRODUKT_TOPIC
+      value: teamdagpenger.{{ data.topic }}

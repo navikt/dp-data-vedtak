@@ -1,22 +1,25 @@
 package no.nav.dagpenger.data.vedtak.tjenester
 
-import no.nav.dagpenger.data.vedtak.repository.InMemoryVedtakRepository
+import io.mockk.mockk
+import io.mockk.verify
+import no.nav.dagpenger.data.vedtak.VedtakDataTopic
 import no.nav.helse.rapids_rivers.testsupport.TestRapid
 import org.intellij.lang.annotations.Language
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class ArenaVedtakMottakTest {
-    private val repository = InMemoryVedtakRepository()
+    private val vedtakDataTopic = mockk<VedtakDataTopic>(relaxed = true)
     private val rapid = TestRapid().also {
-        ArenaVedtakMottak(it, repository)
+        ArenaVedtakMottak(it, vedtakDataTopic)
     }
 
     @Test
-    fun `tar i mot iverksatte vedtak`() {
+    fun `Henter vedtak fra rapid, gjør de om til avro, og publiserer de på data produkt topic`() {
         rapid.sendTestMessage(testJSON)
 
-        assertEquals(1, repository.size())
+        verify {
+            vedtakDataTopic.publiser(any())
+        }
     }
 }
 
@@ -33,8 +36,9 @@ private const val testJSON = """{
   "type": "Ny rettighet",
   "status": "Iverksatt",
   "utfall": "Ja",
+  "saknummer": "2019580493",
+  "løpenummer": "1",
   "opprettet": "2019-09-27T04:04:26",
-  "oppdatert": "2019-09-27T04:04:26",
-  "saknummer": "2019580493"
+  "oppdatert": "2019-09-27T04:04:26"
 }
 """

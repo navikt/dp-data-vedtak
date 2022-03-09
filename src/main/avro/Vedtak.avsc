@@ -5,15 +5,15 @@
   "fields": [
     {
       "name": "vedtakId",
-      "type": "string"
+      "type": "int"
     },
     {
       "name": "sakId",
-      "type": "string"
+      "type": "int"
     },
     {
       "name": "personId",
-      "type": "string"
+      "type": "int"
     },
     {
       "name": "rettighet",
@@ -32,22 +32,26 @@
       "type": "string"
     },
     {
+      "name": "saknummer",
+      "type": "string"
+    },
+    {
+      "name": "lopenummer",
+      "type": "int"
+    },
+    {
       "name": "opprettet",
       "type": {
-        "type": "int",
-        "logicalType": "date"
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
       }
     },
     {
       "name": "oppdatert",
       "type": {
-        "type": "int",
-        "logicalType": "date"
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
       }
-    },
-    {
-      "name": "saknummer",
-      "type": "string"
     }
   ]
 }
