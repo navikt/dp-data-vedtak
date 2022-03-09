@@ -34,4 +34,4 @@ spec:
     - name: KAFKA_RESET_POLICY
       value: earliest
     - name: DATA_PRODUKT_TOPIC
-      value: teamdagpenger.{{ data.topic }}
+      value: teamdagpenger.{{ kafka.topic }}
